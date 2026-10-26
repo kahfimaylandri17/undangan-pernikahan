@@ -1,0 +1,410 @@
+:root {
+    --olive: #6e8067;
+    --olive-dark: #354331;
+    --cream: #f8f6f0;
+    --sage-light: #e8e4d8;
+    --white: #fffdf8;
+    --muted: #70766a;
+    --border: #d9ddcf;
+
+    --font-body: "Poppins", sans-serif;
+    --font-heading: "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* PENGATURAN DASAR */
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--olive-dark);
+    font-family: var(--font-body);
+    font-weight: 300;
+}
+
+/* Mengunci scroll saat pertama kali dibuka */
+body.locked-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-heading);
+}
+section {
+    overflow: hidden;
+}
+.bagian-halaman {
+    padding: 100px 0;
+}
+.latar-hijau {
+    background: var(--sage-light);
+}
+
+/* HALAMAN SAMPUL) */
+.sampul {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sampul-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(30, 43, 29, 0.70), rgba(30, 43, 29, 0.48));
+}
+.isi-sampul {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+.subjudul-sampul {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.sampul h1 {
+    font-size: clamp(60px, 10vw, 90px);
+    line-height: 0.85;
+    font-weight: 500;
+    margin: 30px 0;
+}
+.sampul h1 span {
+    color: #ded8b9;
+    font-style: italic;
+}
+.garis-pemisah {
+    width: 80px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.8);
+    margin: 30px auto;
+}
+.tanggal-sampul {
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+.pesan-sampul {
+    max-width: 520px;
+    margin: 0 auto 30px;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* TOMBOL BUKA */
+.btn-olive {
+    display: inline-block;
+    background: var(--olive);
+    color: white;
+    border: 1px solid var(--olive);
+    border-radius: 0;
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+.btn-olive:hover {
+    background: var(--olive-dark);
+    color: white;
+    border-color: var(--olive-dark);
+}
+.btn-outline-olive {
+    display: inline-block;
+    border: 1px solid var(--olive);
+    border-radius: 0;
+    color: var(--olive);
+    padding: 11px 22px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+.btn-outline-olive:hover {
+    background: var(--olive);
+    color: white;
+}
+
+/* JUDUL DAN DESKRIPSI SECTION */
+.label-judul {
+    color: var(--olive);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+.judul-utama {
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 15px 0;
+}
+.deskripsi-utama {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* SECTION MEMPELAI  */
+.card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 50px 20px;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    box-shadow: 0 10px 40px rgba(53, 67, 49, 0.05);
+}
+.foto-mempelai {
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 8px solid white;
+    box-shadow: 0 10px 30px rgba(53, 67, 49, 0.10);
+}
+.nama-mempelai {
+    font-size: clamp(32px, 5vw, 45px);
+    font-weight: 500;
+    margin: 35px 0 10px;
+}
+.nama-mempelai span {
+    font-size: 0.7em;
+    color: var(--olive);
+    font-style: italic;
+    margin: 0 10px;
+}
+.info-keluarga {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+}
+.info-keluarga strong {
+    color: var(--olive-dark);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* COUNTDOWN */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0;
+}
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100px;
+    min-height: 100px;
+    padding: 15px 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+.countdown-box span {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+.countdown-box small {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+
+/* ACARA  */
+.event-card {
+    height: 100%;
+    padding: 55px 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+.event-card h3 {
+    font-size: 42px;
+    font-weight: 500;
+    margin: 10px 0 20px;
+}
+.event-date, .event-time {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+.event-card hr {
+    max-width: 100px;
+    margin: 25px auto;
+    border-color: var(--border);
+}
+.event-card h5 {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+}
+.event-address {
+    max-width: 300px;
+    margin: 10px auto 25px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* FOOTER */
+.footer {
+    padding: 75px 20px;
+    background: var(--olive-dark);
+    color: var(--cream);
+}
+.footer .label-judul {
+    color: #d9d8bc;
+}
+.footer-title {
+    font-size: clamp(45px, 7vw, 75px);
+    margin: 20px 0;
+}
+.footer-title span {
+    color: #d9d8bc;
+    font-style: italic;
+}
+.footer-description {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #e0e4d9;
+    font-size: 13px;
+    line-height: 2;
+}
+.footer-closing {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* TOMBOL MUSIK  */
+.music-button {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1050;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--olive);
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
+}
+.music-button:hover {
+    background: var(--olive-dark);
+}
+.music-button.playing {
+    animation: musicPulse 2s infinite;
+}
+
+@keyframes musicPulse {
+    50% {
+        box-shadow: 0 0 0 9px rgba(110, 128, 103, 0.18);
+    }
+}
+
+/* ANIMASI FADE UP */
+.fade-up {
+    animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE UNTUK HP */
+@media (max-width: 767px) {
+    .bagian-halaman {
+        padding: 70px 20px;
+    }
+    .sampul h1 {
+        font-size: 68px;
+    }
+    .tanggal-sampul {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+    .pesan-sampul {
+        font-size: 12px;
+    }
+    .card {
+        padding: 30px 15px;
+    }
+    .foto-mempelai {
+        height: 350px;
+    }
+    .countdown {
+        gap: 8px;
+    }
+    .countdown-box {
+        width: 76px;
+        min-height: 85px;
+    }
+    .countdown-box span {
+        font-size: 32px;
+    }
+    .countdown-box small {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+    .event-card {
+        padding: 45px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .sampul h1 {
+        font-size: 55px;
+    }
+    .teks-pengantar {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+    .foto-mempelai {
+        height: 250px;
+    }
+    .countdown-box {
+        width: 68px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
